@@ -386,18 +386,18 @@
                 <div class="col-lg-8">
                     <div class="contact-form-card">
                         <h4 class="contact-title">Send a message</h4>
-                        <form action="">
+                        <form>
                             <div class="form-group">
-                                <input  class="form-control" type="text" placeholder="Name *" required>
+                                <input  class="form-control" id="name" name="name" type="text" placeholder="Name *" required>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" type="email" placeholder="Email *" required>
+                                <input class="form-control"  id="email" name="email" type="email" placeholder="Email *" required>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" id=" placeholder="Message *" rows="7" required></textarea>
+                                <textarea class="form-control"  placeholder="Message *" rows="7" required></textarea>
                             </div>
-                            <div class="form-group ">
-                                <button type="submit" class="form-control btn btn-primary" >Send Message</button>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary" onclick="sendMail()">Send Message</button>
                             </div>
                         </form>
                     </div>
@@ -463,6 +463,14 @@
 
     <!-- JohnDoe js -->
     <script src="assets/js/johndoe.js"></script>
+	<script>
+function sendMail() {
+    var name = $('#contact #name').val();
+    var email = $('#contact #email').val();
+    var message = $('#contact textarea').val();
+    window.location.href = 'mailto:richnaldcharles1995@gmail.com?subject=The subject - ' + name + ' (' + email + ')' + '&body=' + message;
+};
+	</script>
 
 </body>
 </html>
